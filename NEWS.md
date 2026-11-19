@@ -1,5 +1,15 @@
 # tsibble (development version)
 
+* New `slide_kendall()` computes Kendall's tau-b for a rolling time window of
+  width `.width` (in seconds), over the half-open interval `(t - .width, t]`.
+  Only records with both variables observed enter a window, so missings and
+  absent time points never contribute a sample, and ties on either side are
+  handled exactly. The concordant/discordant pair counts are carried across
+  overlapping windows rather than recomputed, giving `O(n log^2 n)` time and
+  `O(n log n)` space per key. The result keeps the input key, index and
+  grouping and appends `n_valid`, `n_concordant`, `n_discordant` and `tau_b`,
+  which works with `index_by()` + `summarise()` for periodic correlation
+  reports.
 * Fixed `format.yearmonth()` incorrectly offseting years for non-week formats (e.g. `format = "%Y %b"`)
 * Fixed `as.ts()` failing for weekly (`yearweek`) tsibbles with recent versions of lubridate.
 * Fixed `interval_pull()` for `POSIXct` indices spaced by whole days, which

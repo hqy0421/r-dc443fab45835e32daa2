@@ -45,6 +45,7 @@ harvest \%>\%
 }
 \seealso{
 Other rolling tsibble: 
+\code{\link{slide_kendall}()},
 \code{\link{stretch_tsibble}()},
 \code{\link{tile_tsibble}()}
 }

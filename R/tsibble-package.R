@@ -87,6 +87,10 @@
 #' )
 "_PACKAGE"
 
+#' @useDynLib tsibble, .registration = TRUE
+#' @keywords internal
+NULL
+
 ## This function is never called
 ## Exists to suppress this NOTE:
 ## "Namespaces in Imports field not imported from:"

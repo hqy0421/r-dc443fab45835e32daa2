@@ -64,6 +64,7 @@ reference:
 - title: Vector operations
   contents:
     - difference
+    - slide_kendall
 
 - title: Index classes
   desc: >
